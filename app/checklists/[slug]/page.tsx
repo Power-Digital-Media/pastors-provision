@@ -114,7 +114,7 @@ export default async function ChecklistPage({
                   {item.description}
                 </p>
                 <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-[var(--gold)] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                  View on Amazon
+                  Restock This Item
                   <svg
                     className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
                     fill="none"

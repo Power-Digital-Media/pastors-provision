@@ -187,26 +187,30 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-36">
           <div className="max-w-2xl">
             <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-              Church Supplies,{" "}
-              <span className="text-[var(--gold)]">Simplified.</span>
+              Your Monthly Restock,{" "}
+              <span className="text-[var(--gold)]">Already Curated.</span>
             </h1>
             <p className="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg sm:mt-6 max-w-xl">
-              We built this portal to help churches stop wasting hours hunting
-              for supplies. Browse our curated restock checklists and
-              hand-picked product links — from communion prep to coffee hour.
+              Stop spending Saturday nights searching Amazon for communion
+              cups and coffee filters. We&apos;ve hand-picked every item your
+              church needs — organized by ministry, ready to reorder in
+              minutes.
+            </p>
+            <p className="mt-3 text-sm text-slate-400 italic">
+              Built by church media professionals who&apos;ve equipped ministries for years.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
               <a
                 href="#checklists"
                 className="inline-flex items-center justify-center rounded-lg bg-[var(--gold)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-yellow-900/20 transition-all hover:bg-[var(--gold-light)] hover:shadow-xl active:scale-[0.97]"
               >
-                View Restock Checklists
+                Browse Restock Checklists
               </a>
               <a
                 href="#products"
                 className="inline-flex items-center justify-center rounded-lg bg-white/10 px-6 py-3 text-sm font-semibold text-white ring-1 ring-white/20 backdrop-blur-sm transition-all hover:bg-white/20 active:scale-[0.97]"
               >
-                Browse Products
+                See Most Restocked Items
               </a>
             </div>
           </div>
@@ -229,7 +233,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {checklists.map((cl) => (
               <ChecklistCard key={cl.title} {...cl} />
             ))}
@@ -246,14 +250,14 @@ export default function HomePage() {
           <div className="mb-10 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <span className="inline-block rounded-full bg-[var(--navy)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--navy)] mb-3">
-                Top-Selling
+                Most Restocked
               </span>
               <h2 className="text-2xl font-bold text-[var(--slate-900)] sm:text-3xl">
-                High-Demand Consumables
+                Items Churches Reorder Every Month
               </h2>
               <p className="mt-2 max-w-2xl text-[var(--slate-500)]">
-                The most reordered church supplies across all departments. Click
-                &quot;Buy on Amazon&quot; to order directly.
+                These are the supplies ministries run through the fastest.
+                We&apos;ve already found the right ones — just click to restock.
               </p>
             </div>
           </div>
@@ -281,26 +285,47 @@ export default function HomePage() {
       <section className="bg-[var(--navy)] py-14 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-white sm:text-3xl">
-            Ready to streamline your church purchasing?
+            Bookmark This — Come Back Every Month
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-slate-300">
-            Bookmark this portal and come back every month. We keep the
-            checklists fresh so you don&apos;t have to.
+            We keep the checklists updated so you don&apos;t have to search.
+            Good stewardship starts with knowing exactly what to order and
+            where to find it.
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
             <a
               href="#checklists"
               className="inline-flex items-center justify-center rounded-lg bg-[var(--gold)] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[var(--gold-light)] hover:shadow-xl active:scale-[0.97]"
             >
-              Start with Checklists
+              Start with a Checklist
             </a>
             <a
               href="#products"
               className="inline-flex items-center justify-center rounded-lg bg-white/10 px-6 py-3 text-sm font-semibold text-white ring-1 ring-white/20 backdrop-blur-sm transition-all hover:bg-white/20 active:scale-[0.97]"
             >
-              Browse All Products
+              See Most Restocked Items
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* ── PDM Cross-Sell ── */}
+      <section className="border-t border-slate-700 bg-[var(--navy-dark)] py-10">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <p className="text-sm text-slate-400">
+            Need help with church live-streaming, sound, or media production?
+          </p>
+          <a
+            href="https://powerdigitalmedia.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors"
+          >
+            Visit Power Digital Media
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
         </div>
       </section>
     </>
