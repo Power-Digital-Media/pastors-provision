@@ -479,6 +479,106 @@ const office: ChecklistCategory = {
   ],
 };
 
+/* ───────────────────────────────────────────────────────
+   CELEBRATE RECOVERY
+   ─────────────────────────────────────────────────────── */
+
+const celebrateRecovery: ChecklistCategory = {
+  slug: "celebrate-recovery",
+  title: "Celebrate Recovery",
+  tagline: "Everything your CR ministry needs each week.",
+  description:
+    "Participant guides, journals, name badges, refreshments, décor, and welcome supplies for a thriving Celebrate Recovery program.",
+  icon: "💜",
+  color: "purple",
+  items: [
+    {
+      title: "Celebrate Recovery Leader's Guide (Updated)",
+      description:
+        "The foundational leadership guide by John Baker for running each lesson and small group step study.",
+      icon: "📖",
+      affiliateUrl: amzSearch("Celebrate Recovery leaders guide John Baker updated"),
+    },
+    {
+      title: "Celebrate Recovery Participant Guides (Set of 4)",
+      description:
+        "The complete four-part participant guide set covering all 25 lessons of the CR journey.",
+      icon: "📚",
+      affiliateUrl: amzSearch("Celebrate Recovery participant guide set 4 pack"),
+    },
+    {
+      title: "CR Step Study Guides (Set of 4)",
+      description:
+        "In-depth step study guides for small-group accountability covering steps 1–12.",
+      icon: "📝",
+      affiliateUrl: amzSearch("Celebrate Recovery step study guide set"),
+    },
+    {
+      title: "Recovery Journals — Spiral Bound (3-Pack)",
+      description:
+        "Lined journals for daily inventories, gratitude lists, and personal reflections during recovery.",
+      icon: "📓",
+      affiliateUrl: amzSearch("recovery journal spiral bound gratitude 3 pack"),
+    },
+    {
+      title: "Sobriety / Milestone Chip Coins (Set of 9)",
+      description:
+        "Color-coded recovery milestone chips for 30 days through multiple years of sobriety celebration.",
+      icon: "🪙",
+      affiliateUrl: amzSearch("sobriety milestone chip coins recovery set"),
+    },
+    {
+      title: "Hello My Name Is Name Badges (200-ct)",
+      description:
+        "Peel-and-stick name tags for large group nights. Creates a welcoming first impression for newcomers.",
+      icon: "🏷️",
+      affiliateUrl: amzSearch("Hello My Name Is name badges stickers 200 count"),
+    },
+    {
+      title: "Individually Wrapped Snack Variety Box (40-ct)",
+      description:
+        "Chips, cookies, and crackers for fellowship time after large group. Individually wrapped for easy serving.",
+      icon: "🍪",
+      affiliateUrl: amzSearch("individually wrapped snack variety box 40 count"),
+    },
+    {
+      title: "Disposable Coffee Cups with Lids — 12 oz (100-ct)",
+      description:
+        "Insulated paper cups with lids for coffee bar and fellowship time hot beverages.",
+      icon: "☕",
+      affiliateUrl: amzSearch("disposable coffee cups lids 12 oz insulated 100 count"),
+    },
+    {
+      title: "Plastic Table Covers — Black (6-Pack)",
+      description:
+        "Disposable tablecloths for sign-in tables, snack stations, and resource displays.",
+      icon: "🖤",
+      affiliateUrl: amzSearch("disposable plastic table covers black 6 pack"),
+    },
+    {
+      title: "Flameless LED Votive Candles (24-Pack)",
+      description:
+        "Battery-operated flickering candles for worship ambiance during large group and open share time.",
+      icon: "🕯️",
+      affiliateUrl: amzSearch("flameless LED votive candles battery 24 pack"),
+    },
+    {
+      title: "Tissue Boxes — Flat Box (12-Pack)",
+      description:
+        "Keep tissues on every table for share groups and testimonies. Soft, 2-ply flat-box tissues.",
+      icon: "🤧",
+      affiliateUrl: amzSearch("tissue boxes flat box bulk 12 pack"),
+    },
+    {
+      title: "Retractable Ballpoint Pens — Black (60-Pack)",
+      description:
+        "Click pens for lesson notes, journaling, and newcomer registration cards.",
+      icon: "🖊️",
+      affiliateUrl: amzSearch("retractable ballpoint pens black bulk 60 pack"),
+    },
+  ],
+};
+
 /* ── Exports ──────────────────────────────────────────── */
 
 export const allChecklists: ChecklistCategory[] = [
@@ -487,6 +587,7 @@ export const allChecklists: ChecklistCategory[] = [
   kidmin,
   facilities,
   office,
+  celebrateRecovery,
 ];
 
 export function getChecklistBySlug(

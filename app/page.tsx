@@ -44,6 +44,14 @@ const checklists = [
     itemCount: 9,
     href: "/checklists/office",
   },
+  {
+    title: "Celebrate Recovery",
+    description:
+      "Participant guides, journals, name badges, milestone chips, and fellowship supplies.",
+    icon: "💜",
+    itemCount: 12,
+    href: "/checklists/celebrate-recovery",
+  },
 ];
 
 const TAG = "powerdigital1-20";
@@ -146,6 +154,22 @@ const products = [
     category: "Facilities",
     icon: "🧻",
     affiliateUrl: amzSearch("commercial paper towel rolls high capacity 6 pack"),
+  },
+  {
+    title: "Celebrate Recovery Participant Guides (Set of 4)",
+    description:
+      "The complete four-part guide set covering all 25 lessons of the CR journey.",
+    category: "CR",
+    icon: "📚",
+    affiliateUrl: amzSearch("Celebrate Recovery participant guide set 4 pack"),
+  },
+  {
+    title: "Sobriety / Milestone Chip Coins (Set of 9)",
+    description:
+      "Color-coded recovery milestone chips for celebrating 30 days through multiple years.",
+    category: "CR",
+    icon: "🪙",
+    affiliateUrl: amzSearch("sobriety milestone chip coins recovery set"),
   },
 ];
 
