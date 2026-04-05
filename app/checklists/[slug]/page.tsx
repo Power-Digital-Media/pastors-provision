@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { allChecklists, getChecklistBySlug } from "@/data/checklists";
+import ChecklistGrid from "@/components/ChecklistGrid";
 import type { Metadata } from "next";
 
 /* ── Static params so Next.js can pre-render each page ── */
@@ -91,47 +92,11 @@ export default async function ChecklistPage({
               {cat.items.length} Items on This List
             </h2>
             <span className="text-xs text-[var(--slate-500)]">
-              All links go to Amazon.com
+              Select items → open all at once on Amazon
             </span>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {cat.items.map((item, i) => (
-              <a
-                key={i}
-                href={item.affiliateUrl}
-                target="_blank"
-                rel="nofollow sponsored noopener"
-                className="group flex flex-col rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-200 hover:shadow-lg hover:border-[var(--gold)] hover:-translate-y-0.5"
-              >
-                <div className="mb-3 flex items-center gap-3">
-                  <span className="text-2xl">{item.icon}</span>
-                  <h3 className="text-sm font-semibold text-[var(--slate-800)] group-hover:text-[var(--navy)] leading-snug">
-                    {item.title}
-                  </h3>
-                </div>
-                <p className="text-xs text-[var(--slate-500)] leading-relaxed flex-1">
-                  {item.description}
-                </p>
-                <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-[var(--gold)] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                  Restock This Item
-                  <svg
-                    className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={2.5}
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                    />
-                  </svg>
-                </div>
-              </a>
-            ))}
-          </div>
+          <ChecklistGrid items={cat.items} />
         </div>
       </section>
 
