@@ -32,9 +32,10 @@ export default function ChecklistGrid({ items }: Props) {
       .filter((_, i) => selected.has(i))
       .map((item) => item.affiliateUrl);
 
-    // Open each in a new tab with a small stagger so browsers don't block them
-    urls.forEach((url, i) => {
-      setTimeout(() => window.open(url, "_blank", "noopener,noreferrer"), i * 300);
+    // All opens must be synchronous inside the click handler
+    // so the browser treats them as a single user gesture
+    urls.forEach((url) => {
+      window.open(url, "_blank", "noopener,noreferrer");
     });
   }, [items, selected]);
 
