@@ -116,7 +116,8 @@ export default function Footer() {
               &copy; {new Date().getFullYear()} Pastor&apos;s Provision. All rights
               reserved. ·{" "}
               <Link href="/privacy" className="underline hover:text-slate-300">Privacy</Link>{" · "}
-              <Link href="/disclaimer" className="underline hover:text-slate-300">Disclaimer</Link>
+              <Link href="/disclaimer" className="underline hover:text-slate-300">Disclaimer</Link>{" · "}
+              <span>Designed &amp; Engineered by <a href="https://powerdigitalmedia.org" target="_blank" rel="noopener noreferrer" className="underline text-slate-400 hover:text-white">Power Digital Media</a></span>
             </p>
             <p className="text-xs text-slate-500 text-center sm:text-right max-w-lg">
               Pastor&apos;s Provision is a participant in the Amazon Services

@@ -16,9 +16,51 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pastors Provision — Church Supply Portal",
+  metadataBase: new URL("https://pastorsprovision.com"),
+  title: {
+    default: "Pastor's Provision — Church Supply & Restock Portal",
+    template: "%s | Pastor's Provision",
+  },
   description:
-    "Streamline your church purchasing with curated monthly restock checklists and high-demand supplies. Hospitality, Communion, KidMin, Facilities & Office.",
+    "Streamline your church purchasing with curated monthly restock checklists and high-demand supplies for Hospitality, Communion, KidMin, Facilities, Office, and Celebrate Recovery.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Pastor's Provision — Church Supply & Restock Portal",
+    description:
+      "Streamline your church purchasing with curated monthly restock checklists and high-demand supplies for Hospitality, Communion, KidMin, Facilities, Office, and Celebrate Recovery.",
+    url: "https://pastorsprovision.com",
+    siteName: "Pastor's Provision",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        width: 800,
+        height: 600,
+        alt: "Pastor's Provision Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pastor's Provision — Church Supply & Restock Portal",
+    description:
+      "Curated monthly restock checklists and high-demand supplies for church departments.",
+    images: ["/logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

@@ -53,3 +53,29 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--slate-500);
 }
+
+/* Print Styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print, header, footer, nav, button, a > span:last-child {
+    display: none !important;
+  }
+  .bg-amber-50, .border-b.border-amber-200 {
+    display: none !important;
+  }
+  section {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    background: transparent !important;
+  }
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .print\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}

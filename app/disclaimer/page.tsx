@@ -5,8 +5,24 @@ export const metadata = {
 };
 
 export default function DisclaimerPage() {
+  const speakableSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://pastorsprovision.com/disclaimer/#webpage",
+    "url": "https://pastorsprovision.com/disclaimer/",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "h2"],
+    },
+  };
+
   return (
     <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+      {/* ── Speakable Schema ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
+      />
       <h1 className="text-3xl font-bold text-[var(--slate-900)] mb-8">
         Affiliate Disclaimer
       </h1>

@@ -1,10 +1,23 @@
 /* ── Checklist category data ─────────────────────────── */
 
+export interface ChecklistItemVariation {
+  title: string;
+  description: string;
+  asin?: string;
+  affiliateUrl: string;
+  spriteIndex: number;
+}
+
 export interface ChecklistItem {
   title: string;
   description: string;
   icon: string;
   affiliateUrl: string;
+  asin?: string;
+  featured?: boolean;
+  featuredTitle?: string;
+  spritePath?: string;
+  variations?: ChecklistItemVariation[];
 }
 
 export interface ChecklistCategory {
@@ -121,6 +134,46 @@ const hospitality: ChecklistCategory = {
         "Bible verse printed paper cups with lids and sleeves. Great for themed hospitality.",
       icon: "✝️",
       affiliateUrl: amzSearch("inspirational scripture paper coffee cups church"),
+      featured: true,
+      featuredTitle: "Scripture Cups & Mug Showcase",
+      spritePath: "/images/featured-cups.png",
+      variations: [
+        {
+          title: "Jingmora 100 Sets 16oz Scripture Cups",
+          description: "Complete set of 16oz paper cups with black lids, sleeves, and motivational scripture verses.",
+          asin: "B0CKXHN613",
+          affiliateUrl: "https://www.amazon.com/gp/aws/cart/add.html?AssociateTag=powerdigital1-20&ASIN.1=B0CKXHN613&Quantity.1=1",
+          spriteIndex: 0
+        },
+        {
+          title: "100 Sets 12/16oz Elegant Script Cups",
+          description: "Beautiful scriptural verses printed on white paper cups with black lids.",
+          asin: "B0C9Y3W28V",
+          affiliateUrl: "https://www.amazon.com/gp/aws/cart/add.html?AssociateTag=powerdigital1-20&ASIN.1=B0C9Y3W28V&Quantity.1=1",
+          spriteIndex: 1
+        },
+        {
+          title: "100 Pack 12oz Charcoal Gray Cups",
+          description: "Modern minimalist solid charcoal gray cups with matching sleeves and dark lids.",
+          asin: "B09HZ2MDY8",
+          affiliateUrl: "https://www.amazon.com/gp/aws/cart/add.html?AssociateTag=powerdigital1-20&ASIN.1=B09HZ2MDY8&Quantity.1=1",
+          spriteIndex: 2
+        },
+        {
+          title: "100 Sets Navy Blue Scripture Cups",
+          description: "Stunning navy blue cups featuring bold white Bible verses and blue lids.",
+          asin: "B0CB8TML7G",
+          affiliateUrl: "https://www.amazon.com/gp/aws/cart/add.html?AssociateTag=powerdigital1-20&ASIN.1=B0CB8TML7G&Quantity.1=1",
+          spriteIndex: 3
+        },
+        {
+          title: "12 Pack Cork-Bottom Scripture Mugs",
+          description: "Premium ceramic mugs with insulation cork bases and inspirational gold script: Brave, Capable, Blessed.",
+          asin: "B0B8Z4VMR9",
+          affiliateUrl: "https://www.amazon.com/gp/aws/cart/add.html?AssociateTag=powerdigital1-20&ASIN.1=B0B8Z4VMR9&Quantity.1=1",
+          spriteIndex: 4
+        }
+      ]
     },
   ],
 };
@@ -143,6 +196,7 @@ const communion: ChecklistCategory = {
         "Plastic, recyclable communion cups that fit standard communion trays. The #1 reordered church item.",
       icon: "🥤",
       affiliateUrl: amzSearch("Broadman church communion cups 1000 count disposable"),
+      asin: "B0073XWN0C",
     },
     {
       title: "Unleavened Communion Bread Wafers (500 Pieces)",
@@ -150,6 +204,7 @@ const communion: ChecklistCategory = {
         "Individually sealed unleavened bread wafers for inclusive communion services.",
       icon: "🍞",
       affiliateUrl: amzSearch("unleavened communion bread wafers 500 count church"),
+      asin: "0805470860",
     },
     {
       title: "Welch's 100% Concord Grape Juice (64 oz)",
@@ -164,6 +219,7 @@ const communion: ChecklistCategory = {
         "All-in-one pre-sealed cups with juice and wafer. Ideal for large services or outdoor events.",
       icon: "🏆",
       affiliateUrl: amzSearch("pre-filled communion cups juice wafer 100 count"),
+      asin: "B015X6ETYS",
     },
     {
       title: "Stacking Communion Tray (Stainless Steel, 40 cups)",
@@ -498,6 +554,7 @@ const celebrateRecovery: ChecklistCategory = {
         "The foundational leadership guide by John Baker for running each lesson and small group step study.",
       icon: "📖",
       affiliateUrl: amzSearch("Celebrate Recovery leaders guide John Baker updated"),
+      asin: "0310268136",
     },
     {
       title: "Celebrate Recovery Participant Guides (Set of 4)",
@@ -505,6 +562,7 @@ const celebrateRecovery: ChecklistCategory = {
         "The complete four-part participant guide set covering all 25 lessons of the CR journey.",
       icon: "📚",
       affiliateUrl: amzSearch("Celebrate Recovery participant guide set 4 pack"),
+      asin: "0310268144",
     },
     {
       title: "CR Step Study Guides (Set of 4)",
@@ -512,6 +570,7 @@ const celebrateRecovery: ChecklistCategory = {
         "In-depth step study guides for small-group accountability covering steps 1–12.",
       icon: "📝",
       affiliateUrl: amzSearch("Celebrate Recovery step study guide set"),
+      asin: "031081033X",
     },
     {
       title: "Recovery Journals — Spiral Bound (3-Pack)",

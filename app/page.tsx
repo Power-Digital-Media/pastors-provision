@@ -1,5 +1,6 @@
-import ProductCard from "@/components/ProductCard";
+import ProductGridWithFilters from "@/components/ProductGridWithFilters";
 import ChecklistCard from "@/components/ChecklistCard";
+import SubscribeForm from "@/components/SubscribeForm";
 
 /* ── Data ────────────────────────────────────────────── */
 
@@ -175,12 +176,94 @@ const products = [
 
 /* ── Page ────────────────────────────────────────────── */
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://pastorsprovision.com/#webpage",
+  "url": "https://pastorsprovision.com/",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", "h2"],
+  },
+};
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://pastorsprovision.com/#organization",
+  "name": "Pastor's Provision",
+  "url": "https://pastorsprovision.com",
+  "logo": "https://pastorsprovision.com/logo.png",
+  "email": "hello@pastorsprovision.com",
+  "sameAs": ["https://powerdigitalmedia.com"],
+  "description": "Your trusted restock ordering portal for church supplies, offering curated monthly checklists and high-demand product guides."
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://pastorsprovision.com/#website",
+  "name": "Pastor's Provision",
+  "url": "https://pastorsprovision.com",
+  "publisher": {
+    "@id": "https://pastorsprovision.com/#organization"
+  }
+};
+
+const faqs = [
+  {
+    question: "What is Pastor's Provision?",
+    answer: "Pastor's Provision is a curated supply portal designed for church administrators, media directors, and ministry volunteers. We gather the most commonly needed supplies for Sunday hospitality, communion, children's ministry (KidMin), facilities, and administration, allowing you to restock in minutes instead of spending hours searching.",
+  },
+  {
+    question: "How do the affiliate links work?",
+    answer: "We use Amazon keyword search links (e.g. searching for a specific product name and volume) with our affiliate tracking code. This ensures that you always land on an active, stocked product page rather than a broken or unavailable specific item page, while allowing us to earn a small commission to keep the site running at no extra cost to you.",
+  },
+  {
+    question: "Do you have custom checklist tracking?",
+    answer: "Yes! On each category checklist page, you can check off items in real-time as you complete your inventory or placing orders. Your progress is saved in your local browser storage so you don't lose track of your work.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+};
+
 export default function HomePage() {
   return (
     <>
+      {/* ── Schemas ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[var(--navy)] via-[var(--navy-dark)] to-[var(--slate-900)]">
-        {/* Decorative circles */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f1d33] via-[var(--navy-dark)] to-[var(--slate-900)] border-b border-slate-800">
+        {/* Modern Mesh Gradients */}
+        <div className="absolute top-1/4 left-1/4 h-[400px] w-[400px] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 h-[350px] w-[350px] rounded-full bg-[var(--gold)]/10 blur-[100px] pointer-events-none" />
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-[var(--gold)]/5 blur-3xl" />
         <div className="absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-[var(--gold)]/5 blur-3xl" />
 
@@ -273,9 +356,43 @@ export default function HomePage() {
             .
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {products.map((product) => (
-              <ProductCard key={product.title} {...product} />
+          <ProductGridWithFilters products={products} />
+        </div>
+      </section>
+
+      {/* ── FAQ Section ── */}
+      <section className="bg-white py-16 sm:py-20 border-t border-slate-200">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block rounded-full bg-[var(--gold)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--gold)] mb-3">
+              FAQ
+            </span>
+            <h2 className="text-2xl font-bold text-[var(--slate-900)] sm:text-3xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="mt-2 text-[var(--slate-500)]">
+              Got questions? We have direct answers for you.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, i) => (
+              <details
+                key={i}
+                className="group border border-slate-200 rounded-xl bg-white p-5 cursor-pointer transition-all duration-200 hover:border-slate-300"
+              >
+                <summary className="list-none flex items-center justify-between font-semibold text-[var(--slate-800)] outline-none select-none">
+                  <span>{faq.question}</span>
+                  <span className="ml-1.5 flex-shrink-0 rounded-full bg-slate-100 p-1 text-slate-500 group-open:rotate-180 transition-transform duration-200">
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </summary>
+                <p className="mt-3 text-sm text-[var(--slate-500)] leading-relaxed">
+                  {faq.answer}
+                </p>
+              </details>
             ))}
           </div>
         </div>
@@ -308,6 +425,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Subscribe Form ── */}
+      <SubscribeForm />
 
       {/* ── PDM Cross-Sell ── */}
       <section className="border-t border-slate-700 bg-[var(--navy-dark)] py-10">

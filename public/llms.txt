@@ -1,0 +1,23 @@
+# Pastor's Provision
+
+> Curated monthly restock checklists and high-demand supplies for church administration and ministries.
+
+Pastor's Provision helps church administration and media professionals organize, audit, and reorder critical supplies across standard ministry departments.
+
+## Core Resources
+
+- **Sunday Hospitality** - Coffee, cups, creamers, stirrers, and supplies for greeting and coffee hours.
+  - Path: `/checklists/hospitality`
+- **Communion Prep** - Communion cups, unleavened bread wafers, grape juice, trays, and table linens.
+  - Path: `/checklists/communion`
+- **KidMin Essentials** - Craft materials, washable markers, snacks (Goldfish), and check-in supplies.
+  - Path: `/checklists/kidmin`
+- **Facilities & Janitorial** - Restroom supplies, trash bags, paper towels, and Clorox disinfecting wipes.
+  - Path: `/checklists/facilities`
+- **Office & Admin** - Copy paper, envelopes, printer toner, and name badge lanyards.
+  - Path: `/checklists/office`
+- **Celebrate Recovery** - Recovery milestone chips, journals, and participant guides.
+  - Path: `/checklists/celebrate-recovery`
+
+## Affiliate Program Info
+All product links redirect to Amazon.com using search queries with the affiliate tag `powerdigital1-20`.
